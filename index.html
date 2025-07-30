@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCart</title>
+    <meta name="description" content="QuickCart - The adorable, offline-ready PWA for shopping!">
+    <meta name="theme-color" content="#ff69b4">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16x16.png">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav" aria-label="Main navigation">
+            <div class="nav-brand">
+                <h1 aria-label="QuickCart logo">🦄 QuickCart</h1>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#home" class="nav-link active">
+                        <span class="nav-icon">🏠</span>
+                        Home
+                    </a></li>
+                    <li><a href="#products" class="nav-link">
+                        <span class="nav-icon">🛍️</span>
+                        Products
+                    </a></li>
+                    <li><a href="#cart" class="nav-link">
+                        <span class="nav-icon">🛒</span>
+                        Cart
+                    </a></li>
+                                            <li><a href="#account" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            Account
+                        </a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-icon" id="cartBtn" aria-label="Cart">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="btn-icon" id="notificationBtn" aria-label="Notifications">
+                    🔔
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="section active" aria-labelledby="home-title">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">✨ Trending Now! ✨</div>
+                    <h2 id="home-title">Welcome to QuickCart <span aria-hidden="true">🦄</span></h2>
+                    <p class="hero-subtitle">Your Cute, offline-ready shopping buddy! Shop fast, fun, and free—anywhere, anytime.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Amazing Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Offline Support</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="browseBtn">
+                            <span class="btn-icon">🛍️</span>
+                            Browse Cute Products
+                        </button>
+                        <button class="btn btn-secondary" id="learnMoreBtn">
+                            <span class="btn-icon">📚</span>
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-placeholder" aria-label="QuickCart mascot">
+                        <div class="mascot-container">
+                            <div class="mascot">🦄</div>
+                            <div class="mascot-sparkles">
+                                <span class="sparkle">✨</span>
+                                <span class="sparkle">💖</span>
+                                <span class="sparkle">🌟</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Offline Magic</h3>
+                    <p>Shop even when you're not connected. QuickCart is always by your side!</p>
+                    <div class="feature-badge">Always Available</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Push Surprises</h3>
+                    <p>Get adorable notifications about deals and order updates.</p>
+                    <div class="feature-badge">Smart Alerts</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Wonderfully Fast</h3>
+                    <p>Lightning-quick, super-cute, and works on any device!</p>
+                    <div class="feature-badge">Lightning Speed</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Beautiful Design</h3>
+                    <p>Adorable interface that makes shopping a delightful experience!</p>
+                    <div class="feature-badge">Adorable UI</div>
+                </div>
+            </div>
+
+            <div class="highlights">
+                <div class="highlight-section">
+                    <h3>Why Choose QuickCart? 💝</h3>
+                    <div class="highlight-grid">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚀</div>
+                            <h4>Super Fast</h4>
+                            <p>Lightning-quick loading and smooth interactions</p>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🔒</div>
+                            <h4>Secure Shopping</h4>
+                            <p>Your data is safe with our advanced security</p>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">💎</div>
+                            <h4>Premium Quality</h4>
+                            <p>Curated products from trusted brands</p>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎁</div>
+                            <h4>Amazing Deals</h4>
+                            <p>Exclusive offers and discounts just for you</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="section-header">
+                <h2>Our Amazing Products</h2>
+                <p>Discover our curated collection of premium products</p>
+            </div>
+            
+            <div class="products-header">
+                <div class="products-controls">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products">
+                        <button class="btn-icon" id="searchBtn" aria-label="Search">🔍</button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="categoryFilter" class="select" aria-label="Filter by category">
+                            <option value="All">All Categories</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Books">Books</option>
+                            <option value="Home & Garden">Home & Garden</option>
+                        </select>
+                        
+                        <select id="sortFilter" class="select" aria-label="Sort products">
+                            <option value="featured">Featured</option>
+                            <option value="name">Name A-Z</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                        
+                        <button class="btn btn-secondary" id="clearFiltersBtn" aria-label="Clear all filters">
+                            Clear Filters
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="products-stats">
+                    <span id="productCount">30 products</span>
+                    <span id="resultsInfo">Showing all products</span>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading amazing products...</p>
+            </div>
+            
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results-content">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your search or filters to find what you're looking for.</p>
+                    <button class="btn btn-primary" id="resetSearchBtn">Reset Search</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="section">
+            <div class="section-header">
+                <h2>Shopping Cart</h2>
+                <button class="btn btn-secondary" id="clearCartBtn">Clear Cart</button>
+            </div>
+            
+            <div class="cart-container">
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be displayed here -->
+                </div>
+                
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Tax:</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total:</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                    <button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account Section -->
+        <section id="account" class="section">
+            <div class="section-header">
+                <h2>My Account <span aria-hidden="true">👤</span></h2>
+                <p>Manage your profile, preferences, and shopping experience</p>
+            </div>
+            
+            <div class="account-container">
+                <!-- User Profile Card -->
+                <div class="account-card profile-card">
+                    <div class="card-header">
+                        <div class="user-avatar">
+                            <span class="avatar-icon">👤</span>
+                        </div>
+                        <div class="user-info">
+                            <h3 id="userName">Welcome, User!</h3>
+                            <p id="userEmail">user@example.com</p>
+                            <div class="user-status">
+                                <span class="status-badge online">🟢 Online</span>
+                                <span class="member-since">Member since 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="form" id="profileForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Optional">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Shipping Address</label>
+                            <textarea id="address" name="address" rows="3" placeholder="Enter your shipping address"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-icon">💾</span>
+                            Update Profile
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Account Stats Card -->
+                <div class="account-card stats-card">
+                    <h3>My Shopping Stats 📊</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">🛒</div>
+                            <div class="stat-content">
+                                <span class="stat-number" id="totalOrders">0</span>
+                                <span class="stat-label">Total Orders</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💖</div>
+                            <div class="stat-content">
+                                <span class="stat-number" id="wishlistCount">0</span>
+                                <span class="stat-label">Wishlist Items</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-content">
+                                <span class="stat-number" id="reviewsCount">0</span>
+                                <span class="stat-label">Reviews Given</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎁</div>
+                            <div class="stat-content">
+                                <span class="stat-number" id="savingsAmount">$0</span>
+                                <span class="stat-label">Total Savings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preferences Card -->
+                <div class="account-card preferences-card">
+                    <h3>Preferences ⚙️</h3>
+                    <div class="preferences-section">
+                        <h4>Notifications</h4>
+                        <div class="notification-settings">
+                            <label class="checkbox">
+                                <input type="checkbox" id="pushNotifications">
+                                <span class="checkmark"></span>
+                                Push Notifications
+                                <span class="setting-description">Get real-time updates about orders and deals</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="emailNotifications">
+                                <span class="checkmark"></span>
+                                Email Notifications
+                                <span class="setting-description">Receive updates and offers via email</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="smsNotifications">
+                                <span class="checkmark"></span>
+                                SMS Notifications
+                                <span class="setting-description">Get order updates via text message</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="preferences-section">
+                        <h4>Privacy & Security</h4>
+                        <div class="privacy-settings">
+                            <label class="checkbox">
+                                <input type="checkbox" id="dataSharing">
+                                <span class="checkmark"></span>
+                                Allow Data Sharing
+                                <span class="setting-description">Help us improve with anonymous usage data</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="locationServices">
+                                <span class="checkmark"></span>
+                                Location Services
+                                <span class="setting-description">Get location-based deals and faster delivery</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="preferences-actions">
+                        <button class="btn btn-secondary" id="testNotificationBtn">
+                            <span class="btn-icon">🔔</span>
+                            Test Notification
+                        </button>
+                        <button class="btn btn-secondary" id="exportDataBtn">
+                            <span class="btn-icon">📤</span>
+                            Export Data
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Account Actions Card -->
+                <div class="account-card actions-card">
+                    <h3>Account Actions 🔧</h3>
+                    <div class="actions-grid">
+                        <button class="btn btn-secondary action-btn" id="changePasswordBtn">
+                            <span class="action-icon">🔒</span>
+                            <span class="action-text">Change Password</span>
+                        </button>
+                        <button class="btn btn-secondary action-btn" id="orderHistoryBtn">
+                            <span class="action-icon">📋</span>
+                            <span class="action-text">Order History</span>
+                        </button>
+                        <button class="btn btn-secondary action-btn" id="wishlistBtn">
+                            <span class="action-icon">💖</span>
+                            <span class="action-text">My Wishlist</span>
+                        </button>
+                        <button class="btn btn-secondary action-btn" id="helpSupportBtn">
+                            <span class="action-icon">❓</span>
+                            <span class="action-text">Help & Support</span>
+                        </button>
+                        <button class="btn btn-secondary action-btn" id="aboutBtn">
+                            <span class="action-icon">ℹ️</span>
+                            <span class="action-text">About QuickCart</span>
+                        </button>
+                        <button class="btn btn-danger action-btn" id="logoutBtn">
+                            <span class="action-icon">🚪</span>
+                            <span class="action-text">Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QuickCart <span aria-hidden="true">🦄</span></h4>
+                <p>Your Cute, offline-ready shopping buddy!</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:sinhaayu.14@gmail.com">sinhaayu.14@gmail.com</a></p>
+                <p>Phone: <a href="tel:8235223486">8235223486</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 QuickCart. All rights reserved. Made with <span aria-label="love">💖</span></p>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="app.closeModal()" aria-label="Close modal">×</button>
+            <!-- Quick view content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="app.closeModal()" aria-label="Close modal">×</button>
+            <!-- Product details content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Offline Indicator -->
+    <div class="offline-indicator" id="offlineIndicator">
+        <span>📶 You're offline. Some features may be limited.</span>
+    </div>
+
+    <!-- Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <div class="install-content">
+            <span>📱 Install our app for a better experience!</span>
+            <button class="btn btn-primary" id="installBtn">Install</button>
+            <button class="btn btn-secondary" id="dismissInstallBtn">Dismiss</button>
+        </div>
+    </div>
+
+                <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/service-worker.js"></script>
+    <script src="js/push-notifications.js"></script>
+</body>
+</html> 
