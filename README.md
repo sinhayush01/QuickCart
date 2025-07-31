@@ -170,4 +170,4 @@ Feel free to:
 
 **Made with 💖 for the web community**
 
-*QuickCart - Your adorable, offline-ready shopping buddy!* 
+*QuickCart - Your cute, offline-ready shopping buddy!* 
